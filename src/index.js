@@ -57,12 +57,14 @@ class TodoList extends Component{
   }
   render(){
     return <div>
-    <NewItem newItem='' onCreate={ text => this.addItem(text) }/>
-    <ol>
-      {this.props.items.map((item, index) => {return <li key={index}>{item}</li>
-    })}
-    </ol>
-    </div>
+              <NewItem newItem='' onCreate={ text => this.addItem(text) }/>
+              <ol>
+                {this.props.items.map((item, index) => {
+                  return <li key={index}>{item}</li>
+                  })
+                }<EditButton /> | <DeleteButton />
+              </ol>
+            </div>
   }
 }
 
